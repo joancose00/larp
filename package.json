@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "build:static": "NODE_ENV=production next build"
+    "build:static": "cross-env NODE_ENV=production next build"
   },
   "dependencies": {
     "next": "14.1.0",
