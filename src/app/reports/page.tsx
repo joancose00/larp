@@ -8,7 +8,7 @@ const reports = [
   {
     id: 'whale-psy-ops',
     title: 'Whale Psy-Ops: A Retrospective',
-    description: 'An in-depth analysis of whale wallet behavior patterns and their impact on market sentiment. Using our proprietary QIF system, we track the quantum entanglement of large wallet movements.',
+    description: 'An in-depth analysis of whale wallet behavior patterns and their impact on market sentiment. Using our proprietary QUIF system, we track the quantum unentanglement of large wallet movements.',
     category: 'Market Analysis',
     date: '2025-03-22',
   },

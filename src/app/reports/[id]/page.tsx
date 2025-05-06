@@ -11,7 +11,7 @@ const reportDetails = {
     author: 'Dr. Lucien Chen',
     content: `
       <h2>Executive Summary</h2>
-      <p>Our latest analysis reveals unprecedented patterns in whale wallet behavior, suggesting a sophisticated psychological operation designed to manipulate market sentiment. Using our proprietary Quantum Influence Framework (QIF), we've identified a series of coordinated movements that appear to be part of a larger market manipulation strategy.</p>
+      <p>Our latest analysis reveals unprecedented patterns in whale wallet behavior, suggesting a sophisticated psychological operation designed to manipulate market sentiment. Using our proprietary Quantum Unentanglement Influence Framework (QUIF), we've identified a series of coordinated movements that appear to be part of a larger market manipulation strategy.</p>
 
       <h2>Key Findings</h2>
       <ul>
@@ -22,7 +22,7 @@ const reportDetails = {
       </ul>
 
       <h2>Methodology</h2>
-      <p>Our QIF system employs quantum-adjacent algorithms to analyze wallet behavior patterns across multiple dimensions:</p>
+      <p>Our QUIF system employs quantum-adjacent algorithms to analyze wallet behavior patterns across multiple dimensions:</p>
       <ul>
         <li>Transaction timing and frequency analysis</li>
         <li>Cross-exchange movement correlation</li>
@@ -39,7 +39,7 @@ const reportDetails = {
       </ul>
 
       <h2>Implications</h2>
-      <p>This analysis suggests that whale behavior is becoming increasingly sophisticated, with clear evidence of psychological operations designed to influence market sentiment. Our QIF system has demonstrated remarkable accuracy in predicting these movements, providing valuable insights for market participants.</p>
+      <p>This analysis suggests that whale behavior is becoming increasingly sophisticated, with clear evidence of psychological operations designed to influence market sentiment. Our QUIF system has demonstrated remarkable accuracy in predicting these movements, providing valuable insights for market participants.</p>
     `,
     metrics: {
       accuracy: '89%',
