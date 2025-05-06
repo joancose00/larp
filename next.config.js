@@ -9,7 +9,14 @@ const nextConfig = {
     unoptimized: process.env.NODE_ENV === 'production', // Required for static export
     domains: ['github.com'], // Add any external image domains you're using
   },
-  trailingSlash: true // Add trailing slashes for better compatibility
+  trailingSlash: true, // Add trailing slashes for better compatibility
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': require('path').resolve(__dirname, 'src'),
+    }
+    return config
+  }
 }
 
 module.exports = nextConfig 
