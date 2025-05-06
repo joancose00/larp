@@ -1,10 +1,8 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import { ArrowLeftIcon, ChartBarIcon, UserGroupIcon, BeakerIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
-import ReportContent from './ReportContent'
+import { notFound } from 'next/navigation'
 
+// Report details
 const reportDetails = {
   'whale-psy-ops': {
     title: 'Whale Psy-Ops: A Retrospective',
@@ -197,32 +195,71 @@ const reportDetails = {
   }
 }
 
-// Server Component for the page
-export async function generateStaticParams() {
+// Server Component for the page - generates paths at build time
+export function generateStaticParams() {
   return Object.keys(reportDetails).map((id) => ({
     id: id,
   }))
+}
+
+// Report Content Component
+function ReportContent({ report }: { report: any }) {
+  return (
+    <div>
+      <div className="mb-8">
+        <span className="inline-block bg-blue-500/10 text-blue-400 text-sm font-medium px-3 py-1 rounded-full mb-4">
+          {report.category}
+        </span>
+        <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+          {report.title}
+        </h1>
+        <div className="flex justify-between items-center">
+          <p className="text-gray-400">By {report.author}</p>
+          <p className="text-gray-400">{report.date}</p>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div className="bg-gray-900/50 border border-gray-800 p-6 rounded-xl">
+          <div className="text-center">
+            <p className="text-sm text-gray-400 mb-1">Accuracy</p>
+            <p className="text-2xl font-bold text-blue-400">{report.metrics.accuracy}</p>
+          </div>
+        </div>
+        <div className="bg-gray-900/50 border border-gray-800 p-6 rounded-xl">
+          <div className="text-center">
+            <p className="text-sm text-gray-400 mb-1">Confidence</p>
+            <p className="text-2xl font-bold text-blue-400">{report.metrics.confidence}</p>
+          </div>
+        </div>
+        <div className="bg-gray-900/50 border border-gray-800 p-6 rounded-xl">
+          <div className="text-center">
+            <p className="text-sm text-gray-400 mb-1">Impact</p>
+            <p className="text-2xl font-bold text-blue-400">{report.metrics.impact}</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-gray-900/50 border border-gray-800 p-8 rounded-xl">
+        <div 
+          className="prose prose-invert prose-blue max-w-none"
+          dangerouslySetInnerHTML={{ __html: report.content }}
+        />
+      </div>
+    </div>
+  )
 }
 
 export default function ReportPage({ params }: { params: { id: string } }) {
   const report = reportDetails[params.id as keyof typeof reportDetails]
 
   if (!report) {
-    return (
-      <main className="min-h-screen bg-gradient-to-b from-gray-900 to-black py-24">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">Report Not Found</h1>
-          <Link href="/reports" className="text-blue-500 hover:text-blue-400">
-            Return to Reports
-          </Link>
-        </div>
-      </main>
-    )
+    notFound()
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-900 to-black">
-      <div className="max-w-4xl mx-auto px-4 py-24">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black">
+      <div className="max-w-4xl mx-auto px-4 py-16">
         <Link 
           href="/reports"
           className="inline-flex items-center text-blue-500 hover:text-blue-400 mb-8"
@@ -233,6 +270,6 @@ export default function ReportPage({ params }: { params: { id: string } }) {
 
         <ReportContent report={report} />
       </div>
-    </main>
+    </div>
   )
-} 
+}
