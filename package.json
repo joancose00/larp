@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "npx wrangler pages deploy out --project-name=larp"
+    "build:static": "NODE_ENV=production next build"
   },
   "dependencies": {
     "next": "14.1.0",

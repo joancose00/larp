@@ -2,11 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  // For Cloudflare Pages deployments
-  output: 'export',
-  distDir: 'out',
+  // Only enable static export in production
+  output: process.env.NODE_ENV === 'production' ? 'export' : undefined,
+  distDir: process.env.NODE_ENV === 'production' ? 'out' : '.next',
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: process.env.NODE_ENV === 'production', // Required for static export
     domains: ['github.com'], // Add any external image domains you're using
   },
   trailingSlash: true // Add trailing slashes for better compatibility
