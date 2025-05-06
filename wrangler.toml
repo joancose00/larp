@@ -1,3 +1,6 @@
+name = "larp"
+pages_build_output_dir = "out"
+
 [site]
 bucket = "out"
 compatibility_date = "2023-06-28"
