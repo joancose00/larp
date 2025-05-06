@@ -23,7 +23,7 @@ export default function Navigation() {
             href="/" 
             className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
           >
-            $LARP
+            Ledger Analysis Reporting & Profiling
           </Link>
           
           {/* Desktop Navigation */}
