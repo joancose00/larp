@@ -1,0 +1,6 @@
+# Ensure dev dependencies are included
+[build]
+command = "npm ci --include=dev && npm run build:static"
+[build.environment]
+NODE_VERSION = "18"
+NPM_FLAGS = "--include=dev"
