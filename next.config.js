@@ -8,6 +8,8 @@ const nextConfig = {
   images: {
     unoptimized: process.env.NODE_ENV === 'production', // Required for static export
     domains: ['github.com'], // Add any external image domains you're using
+    loader: 'custom',
+    loaderFile: './image-loader.js',
   },
   trailingSlash: true, // Add trailing slashes for better compatibility
   webpack: (config) => {
@@ -16,6 +18,10 @@ const nextConfig = {
       '@': require('path').resolve(__dirname, 'src'),
     }
     return config
+  },
+  // For Cloudflare Pages static export
+  experimental: {
+    scrollRestoration: true,
   }
 }
 
