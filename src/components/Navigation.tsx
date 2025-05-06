@@ -39,7 +39,7 @@ export default function Navigation() {
               </Link>
             ))}
             <a 
-              href="https://pump.fun"
+              href="https://pump.fun/coin/DknP49zgu7NP4gvbieKM3s8MrS8wBu8fhTGTwMBHpump"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity"
@@ -90,7 +90,7 @@ export default function Navigation() {
                 </Link>
               ))}
               <a 
-                href="https://pump.fun"
+                href="https://pump.fun/coin/DknP49zgu7NP4gvbieKM3s8MrS8wBu8fhTGTwMBHpump"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity"
